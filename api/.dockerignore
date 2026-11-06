@@ -1,0 +1,10 @@
+**/.git
+**/.github
+**/.vs
+**/.idea
+**/.env
+**/.npmrc
+**/bin
+**/obj
+**/*.user
+**/*.md

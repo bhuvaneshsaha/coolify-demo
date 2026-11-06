@@ -1,0 +1,10 @@
+**/.git
+**/.github
+**/.vs
+**/.idea
+**/.env
+**/.npmrc
+**/node_modules
+**/dist
+**/.angular
+**/*.md

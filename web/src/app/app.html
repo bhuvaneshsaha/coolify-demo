@@ -1,0 +1,36 @@
+<main>
+  <h1>Coolify demo</h1>
+  <p class="lede">
+    This page calls <code>/api/info</code> so you can see which server answered.
+  </p>
+
+  <p>
+    <button type="button" (click)="refresh()" [disabled]="loading()">
+      {{ loading() ? 'Loading…' : 'Refresh' }}
+    </button>
+  </p>
+
+  <p class="meta">API <code>{{ apiUrl() || '…' }}</code></p>
+
+  @if (error()) {
+    <p class="error" role="alert">{{ error() }}</p>
+  }
+
+  @if (info(); as info) {
+    <p class="served-by">Served by {{ info.containerHostname }}</p>
+    <dl>
+      <dt>Machine name</dt>
+      <dd>{{ info.machineName }}</dd>
+      <dt>Host name</dt>
+      <dd>{{ info.hostName }}</dd>
+      <dt>Container hostname</dt>
+      <dd>{{ info.containerHostname }}</dd>
+      <dt>Environment</dt>
+      <dd>{{ info.environment }}</dd>
+      <dt>App version</dt>
+      <dd>{{ info.appVersion }}</dd>
+      <dt>UTC time</dt>
+      <dd>{{ info.utc }}</dd>
+    </dl>
+  }
+</main>
